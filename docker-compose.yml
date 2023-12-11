@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  nextjs:
+    build: ./
+    container_name: nextjs
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    networks:
+      - nextNetwork
+
+  database:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-backup:/data/db
+    networks:
+      - nextNetwork
+
+networks:
+  nextNetwork:
+    driver: bridge

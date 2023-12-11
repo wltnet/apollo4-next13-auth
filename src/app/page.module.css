@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.main:focus {
+  /* default focus not required on body, since technically it is not
+   * an interactive element. Removing this outline also prevents the
+   * main element from displaying focus whenever the body is clicked/
+   * tapped */
+ outline: none;
+}
