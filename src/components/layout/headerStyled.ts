@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { device } from '@/util/device';
 
 export const StyledHeader = styled.header`
   min-height: 2.5em;
   padding: 0.9375em 1.25em;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.headerBackgroundColour};
   color: ${({ theme }) => theme.colors.headerFont};
@@ -15,6 +17,10 @@ export const StyledHeader = styled.header`
 
   &:focus {
     outline: none;
+  }
+
+  @media ${device.tablet} {
+    flex-direction: row;
   }
 `;
 
@@ -36,11 +42,12 @@ export const Title = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  align-self: center;
+  align-self: flex-end;
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  flex-direction: row;
   width: 12rem;
+  margin-top: 0.25rem;
 
   nav {
     display: flex;
@@ -57,6 +64,11 @@ export const Wrapper = styled.div`
       display: inline;
       padding-left: 0.5rem;
     }
+  }
+
+  @media ${device.tablet} {
+    align-self: center;
+    flex-direction: column;
   }
 `;
 
