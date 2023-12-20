@@ -46,13 +46,13 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  width: 12rem;
   margin-top: 0.25rem;
 
   nav {
     display: flex;
     justify-content: flex-end;
     padding-bottom: 0.5rem;
+    margin-right: 0.5em;
   }
 
   ul {
@@ -69,6 +69,11 @@ export const Wrapper = styled.div`
   @media ${device.tablet} {
     align-self: center;
     flex-direction: column;
+    width: 12rem;
+    
+    nav {
+      margin-right: 0;
+    }
   }
 `;
 
