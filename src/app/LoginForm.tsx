@@ -2,7 +2,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/navigation';
-// import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import { AuthContext, AuthContextContent } from '@/context/AuthProvider';
 import { useForm } from '@/hooks/useForm';
 import { handleValidate } from '@/util/validate';
@@ -39,7 +38,6 @@ const LoginForm = () => {
 
   const { onChange, onSubmit, values } = useForm(loginUserCallback, initialState);
 
-  // const { data } = useSuspenseQuery(query);
   const [loginUser, { data, loading, error }] = useMutation(LOGIN_USER, {
     onCompleted(data) {
       authContext.setAuthInfo({ accessToken: data.login.accessToken, userData: data.login});
